@@ -3,7 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@emotion/react": "^11.11.4",
+    "@emotion/react": "^11.13.3",
+    "@emotion/styled": "^11.13.0",
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^13.0.0",
     "@testing-library/user-event": "^13.2.1",
@@ -11,10 +12,14 @@
     "@types/node": "^16.7.13",
     "@types/react": "^18.0.0",
     "@types/react-dom": "^18.0.0",
+    "babel-plugin-module-resolver": "^5.0.2",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-import-resolver-babel-module": "^5.3.2",
+    "eslint-plugin-import": "^2.29.1",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
+    "react-router-dom": "^6.26.1",
     "react-scripts": "5.0.1",
-    "styled-components": "^6.1.9",
     "typescript": "^4.4.2",
     "web-vitals": "^2.1.0"
   },
@@ -22,7 +27,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "lint": "eslint lint"
   },
   "eslintConfig": {
     "extends": [
@@ -43,10 +49,14 @@
     ]
   },
   "devDependencies": {
-    "@eslint/js": "^9.2.0",
-    "eslint": "^9.2.0",
-    "eslint-plugin-react": "^7.34.1",
-    "globals": "^15.1.0",
-    "typescript-eslint": "^7.8.0"
+    "@eslint/js": "^9.9.0",
+    "eslint": "^8.57.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-react-app": "^7.0.1",
+    "eslint-import-resolver-typescript": "^3.6.1",
+    "eslint-plugin-react": "^7.35.0",
+    "globals": "^15.9.0",
+    "prettier": "^3.3.3",
+    "typescript-eslint": "^8.2.0"
   }
 }
