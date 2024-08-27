@@ -19,7 +19,8 @@
     "paths": {
       "svg/*": ["svg/*"],
       "components/*": ["components/*"],
-      "types/*": ["types/*"]
+      "types/*": ["types/*"],
+      "pages/*": ["pages/*"]
     }
   },
   "include": ["./src"]
