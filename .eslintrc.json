@@ -1,20 +1,25 @@
 {
-  "root": true,
   "env": {
     "browser": true,
     "es2021": true
   },
-  "extends": ["plugin:import/recommended", "plugin:react/recommended"],
+  "extends": ["react-app", "react-app/jest"],
+  "parser": "@typescript-eslint/parser",
   "parserOptions": {
-    "ecmaFeatures": {
-      "jsx": true
-    },
-    "ecmaVersion": 2018,
+    "ecmaVersion": "latest",
     "sourceType": "module"
   },
-  "plugins": ["import", "react"],
+  "plugins": ["@typescript-eslint", "react"],
   "rules": {
-    "no-console": "error",
+    "no-console": "warn",
+    "no-duplicate-imports": "error",
+    "indent": "warn",
+    "linebreak-style": "warn",
     "import/prefer-default-export": "off"
+  },
+  "settings": {
+    "import/resolver": {
+      "typescript": {}
+    }
   }
 }
