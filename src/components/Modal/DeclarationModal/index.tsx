@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Container from '../container';
 import * as S from './style';
 import { XIcon, SelectButton } from 'svg';
 import { ReportType } from 'types';
@@ -85,7 +86,7 @@ const DeclarationModal: React.FC<Props> = ({
   };
 
   return (
-    <S.Container>
+    <Container>
       <S.Wrapper $etc={isSelect[3]}>
         <S.Title>
           신고 사유
@@ -123,7 +124,7 @@ const DeclarationModal: React.FC<Props> = ({
           신고
         </S.SubmitButton>
       </S.Wrapper>
-    </S.Container>
+    </Container>
   );
 };
 
