@@ -5,6 +5,7 @@ import React, {
 import * as S from './style';
 import { Tag } from 'types/tag';
 import TagList from './TagList';
+import MateList from './MateList';
 
 const PostCard = () => {
   const [data, setData] = useState<Tag[]>([]);
@@ -50,7 +51,7 @@ const PostCard = () => {
   }, []);
   return (
     <S.Container>
-      {data.map((item, _) => (
+      {data.map((item) => (
         <div key={item.id}>
           {item.author}
           <br />
@@ -58,13 +59,14 @@ const PostCard = () => {
           <br />
           {Number(item.date)}
           <br />
-          {item.gender}
-          <br />
-          {item.grade}
+          <MateList
+            gender={item.gender}
+            grade={item.grade}
+          />
           <br />
           {item.maximum}
           <br />
-          <TagList tag={item.tag}/>
+          <TagList tag={item.tag} />
           {item.title}
           <br />
           <br />

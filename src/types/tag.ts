@@ -1,6 +1,6 @@
-type genderType = 'MALE'| 'FEMALE'| 'ANY';
+export type genderType = 'MALE'| 'FEMALE'| 'ANY';
 export type tagType = 'WALK'| 'WORRY'| 'CHAT'| 'EXERCISE'| 'STUDY'| 'GO_OUT';
-type gradeType = "ONE"| "TWO"| "THREE"| "FOUR"| "FIVE"| "SIX";
+export type gradeType = "ONE"| "TWO"| "THREE"| "FOUR"| "FIVE"| "SIX";
 
 export interface Tag {
   id: number;
