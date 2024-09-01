@@ -3,7 +3,11 @@
     "browser": true,
     "es2021": true
   },
-  "extends": ["react-app", "react-app/jest"],
+  "extends": [
+    "react-app",
+    "react-app/jest",
+    "prettier"
+  ],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
     "ecmaVersion": "latest",
@@ -14,8 +18,9 @@
     "no-console": "warn",
     "no-duplicate-imports": "error",
     "indent": "warn",
-    "linebreak-style": "warn",
-    "import/prefer-default-export": "off"
+    "linebreak-style": 0,
+    "import/prefer-default-export": "off",
+    "react/prop-types": "off"
   },
   "settings": {
     "import/resolver": {
