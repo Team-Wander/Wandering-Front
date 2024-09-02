@@ -1,9 +1,9 @@
 import React from 'react';
 import * as S from './style';
-import { Tag } from 'types/tag';
+import { Card } from 'types/tag';
 import MateItem from './MateItem';
 
-const MateList = ({grade,gender}:Pick<Tag,"grade"|"gender">) => {
+const MateList = ({grade,gender}:Pick<Card,"grade"|"gender">) => {
   const list = [...grade,gender];
   return (
     <S.Container>

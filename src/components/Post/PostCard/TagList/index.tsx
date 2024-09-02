@@ -1,9 +1,9 @@
 import React from 'react';
 import * as S from './style';
-import { Tag } from 'types/tag';
+import { Card } from 'types/tag';
 import TagItem from './TagItem';
 
-const TagList = ({ tag }: Pick<Tag, 'tag'>) => {
+const TagList = ({ tag }: Pick<Card, 'tag'>) => {
   return (
     <S.Container>
       {tag.map((item, index) => (

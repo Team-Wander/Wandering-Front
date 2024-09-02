@@ -1,79 +1,67 @@
 import React, {
-  useEffect,
   useState,
 } from 'react';
 import * as S from './style';
-import { Tag } from 'types/tag';
+import { Card } from 'types/tag';
 import TagList from './TagList';
 import MateList from './MateList';
 
 const PostCard = () => {
-  const [data, setData] = useState<Tag[]>([]);
-  useEffect(() => {
-    setData([
-      {
-        id: 1,
-        author: 'Alice',
-        title: 'Morning Walk',
-        content:
-          'A refreshing morning walk in the park.',
-        date: new Date('2024-08-29T07:30:00Z'),
-        maximum: 10,
-        gender: 'ANY',
-        tag: ['WALK', 'EXERCISE'],
-        grade: ['ONE', 'TWO'],
-      },
-      {
-        id: 2,
-        author: 'Bob',
-        title: 'Study Group',
-        content:
-          'Join us for a productive study session.',
-        date: new Date('2024-08-30T14:00:00Z'),
-        maximum: 5,
-        gender: 'FEMALE',
-        tag: ['STUDY', 'CHAT'],
-        grade: ['THREE', 'FOUR'],
-      },
-      {
-        id: 3,
-        author: 'Charlie',
-        title: 'Evening Chat',
-        content:
-          'Relax and chat with friends in the evening.',
-        date: new Date('2024-08-31T18:00:00Z'),
-        maximum: 8,
-        gender: 'MALE',
-        tag: ['CHAT', 'GO_OUT'],
-        grade: ['FIVE', 'SIX'],
-      },
-    ]);
-  }, []);
+  const [data] = useState<Card>({
+    id: 1,
+    author: 'Alice',
+    title: 'Morning Walk',
+    author_school: '고등학교',
+    author_gender: 'MALE',
+    author_grade: 'ONE',
+    content:
+      'A refreshing morning walk in the park.',
+    date: new Date('2024-08-29T07:30:00Z'),
+    maximum: 10,
+    gender: 'ANY',
+    tag: ['WALK', 'EXERCISE'],
+    grade: ['ONE', 'TWO'],
+  });
+
+  const text = {
+    ONE: '1학년',
+    TWO: '2학년',
+    THREE: '3학년',
+    FOUR: '4학년',
+    FIVE: '5학년',
+    SIX: '6학년',
+    MALE: '남자',
+    FEMALE: '여자',
+    ANY: '성별무관'
+  };
+
   return (
     <S.Container>
-      {data.map((item) => (
-        <div key={item.id}>
-          {item.author}
-          <br />
-          {item.content}
-          <br />
-          {Number(item.date)}
-          <br />
           <MateList
-            gender={item.gender}
-            grade={item.grade}
+            gender={data.gender}
+            grade={data.grade}
           />
-          <br />
-          {item.maximum}
-          <br />
-          <TagList tag={item.tag} />
-          {item.title}
-          <br />
-          <br />
-          <br />
-          <br />
-        </div>
-      ))}
+          <S.AuthorDataBox>
+            <S.Author>
+              {data.author}
+            </S.Author>
+            <S.Contour/>
+            <S.AuthorData>
+              <span>
+                {data.author_school}
+              </span>
+                <S.Dot/>
+              <span>
+                {text[data.author_grade]}
+              </span>
+              <S.Dot/>
+              <span>
+              {text[data.author_gender]}
+              </span>
+            </S.AuthorData>
+          </S.AuthorDataBox>
+          {data.title}
+          <TagList tag={data.tag} />
     </S.Container>
   );
 };

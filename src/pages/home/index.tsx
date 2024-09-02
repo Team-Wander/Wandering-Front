@@ -1,12 +1,14 @@
 import React from 'react';
 import * as S from './style';
-import PostCard from 'components/Post/PostCard';
+import { DeclarationModal } from 'components/Modal';
 
 const Home = () => {
   return (
     <S.Container>
-     
-      <PostCard></PostCard>
+      <DeclarationModal
+        onClose={() => console.log('hi')}
+        postId={1}
+      />
     </S.Container>
   );
 };
