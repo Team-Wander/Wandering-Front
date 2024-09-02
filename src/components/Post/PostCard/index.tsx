@@ -2,7 +2,7 @@ import React, {
   useState,
 } from 'react';
 import * as S from './style';
-import { Card } from 'types/tag';
+import { Card } from 'types/Card';
 import TagList from './TagList';
 import MateList from './MateList';
 

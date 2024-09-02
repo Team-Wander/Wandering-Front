@@ -3,7 +3,7 @@ import * as S from './style';
 import {
   genderType,
   gradeType,
-} from 'types/tag';
+} from 'types/Card';
 
 interface Props {
   data: genderType | gradeType
