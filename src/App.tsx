@@ -1,8 +1,6 @@
 import React from 'react';
 import { Route, Routes } from 'react-router-dom';
-import { Home } from 'pages';
-import InputPage from 'pages/InputPage';
-import Card from 'pages/Card';
+import { Home, InputPage, Card } from 'pages';
 
 function App() {
   return (

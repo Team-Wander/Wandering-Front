@@ -1,5 +1,5 @@
 import React from 'react';
-import PostCard from 'components/Post/PostCard';
+import { PostCard } from 'components';
 
 const Card = () => {
   return (
