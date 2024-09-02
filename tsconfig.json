@@ -20,7 +20,8 @@
       "svg/*": ["svg/*"],
       "components/*": ["components/*"],
       "types/*": ["types/*"],
-      "pages/*": ["pages/*"]
+      "pages/*": ["pages/*"],
+      "api/*": ["api/*"]
     }
   },
   "include": ["./src"]
