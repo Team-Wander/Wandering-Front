@@ -1,6 +1,6 @@
 import React from 'react';
-import { DeclarationModal } from 'components';
 import * as S from './style';
+import { DeclarationModal } from 'components/Modal';
 
 const Home = () => {
   return (
