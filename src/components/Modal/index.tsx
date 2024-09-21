@@ -1,1 +1,1 @@
-export { default as DeclarationModal } from "./DeclarationModal";
+export { default as DeclarationModal } from './DeclarationModal';

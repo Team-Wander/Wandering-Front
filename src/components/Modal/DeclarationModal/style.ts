@@ -1,4 +1,4 @@
-import styled from "@emotion/styled";
+import styled from '@emotion/styled';
 
 export const Wrapper = styled.div<{
   $etc: boolean;
@@ -6,7 +6,7 @@ export const Wrapper = styled.div<{
   display: flex;
   width: 332px;
   height: ${({ $etc }: { $etc: boolean }) =>
-    $etc ? "396px" : "358px"};
+    $etc ? '396px' : '358px'};
   padding: 24px;
   flex-direction: column;
   align-items: center;
@@ -29,7 +29,7 @@ export const ContentsBox = styled.div<{
   display: flex;
   width: 100%;
   height: ${({ $etc }: { $etc: boolean }) =>
-    $etc ? "238px" : "176px"};
+    $etc ? '238px' : '176px'};
   flex-wrap: wrap;
 `;
 

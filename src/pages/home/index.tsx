@@ -1,15 +1,13 @@
 import React from 'react';
-import * as S from './style';
-import { DeclarationModal } from 'components/Modal';
+import PostList from 'components/Post/PostList';
+import Filter from 'components/Filter';
 
 const Home = () => {
   return (
-    <S.Container>
-      <DeclarationModal
-        onClose={() => console.log('hi')}
-        postId={1}
-      />
-    </S.Container>
+    <>
+      <PostList />
+      <Filter />
+    </>
   );
 };
 

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Route, Routes } from 'react-router-dom';
-import { Home, InputPage, Card } from 'pages';
+import { Home, InputPage } from 'pages';
 
 function App() {
   return (
@@ -10,7 +10,6 @@ function App() {
         path="/input"
         element={<InputPage />}
       />
-      <Route path="/card" element={<Card />} />
     </Routes>
   );
 }

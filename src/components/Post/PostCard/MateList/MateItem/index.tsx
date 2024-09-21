@@ -6,7 +6,7 @@ import {
 } from 'types/Card';
 
 interface Props {
-  data: genderType | gradeType
+  data: genderType | gradeType;
 }
 
 const MateItem = ({ data }: Props) => {
@@ -19,7 +19,7 @@ const MateItem = ({ data }: Props) => {
     SIX: '6학년',
     MALE: '남자',
     FEMALE: '여자',
-    ANY: '성별무관'
+    ANY: '성별무관',
   };
   return (
     <S.Container>
