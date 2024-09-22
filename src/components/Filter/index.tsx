@@ -8,7 +8,11 @@ import * as S from './style';
 import React from 'react';
 import XIcon from 'svg/XIcon';
 
-const Filter = () => {
+interface Props {
+  onClose: () => void;
+}
+
+const Filter = ({ onClose }: Props) => {
   // const tag: tagType[] = [
   //   'WALK',
   //   'WORRY',
@@ -36,7 +40,9 @@ const Filter = () => {
     <S.Wrapper>
       <S.FilterHeader>
         <S.Title>필터</S.Title>
-        <XIcon />
+        <S.CloseButton onClick={onClose}>
+          <XIcon />
+        </S.CloseButton>
       </S.FilterHeader>
       <ChoiceList label={'태그'} />
       <ChoiceList label={'성별'} />

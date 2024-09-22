@@ -1,6 +1,9 @@
 import styled from '@emotion/styled';
 
 export const Wrapper = styled.div`
+  position: absolute;
+  top: 3.5rem;
+  right: 0;
   display: flex;
   width: 600px;
   padding: 28px 24px;
@@ -19,3 +22,9 @@ export const FilterHeader = styled.div`
 `;
 
 export const Title = styled.span``;
+
+export const CloseButton = styled.button`
+  border: 0;
+  background: none;
+  cursor: pointer;
+`;
