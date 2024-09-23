@@ -16,6 +16,40 @@ const theme = {
     },
     system: '#E53A3A',
   },
+  fontStyle: {
+    h1: {
+      fontSize: '36px',
+      lineHeight: '120%',
+    },
+    h2: {
+      fontSize: '32px',
+      lineHeight: '120%',
+    },
+    h3: {
+      fontSize: '28px',
+      lineHeight: '130%',
+    },
+    h4: {
+      fontSize: '24px',
+      lineHeight: '130%',
+    },
+    m1: {
+      fontSize: '20px',
+      lineHeight: '150%',
+    },
+    m2: {
+      fontSize: '18px',
+      lineHeight: '150%',
+    },
+    m3: {
+      fontSize: '16px',
+      lineHeight: '165%',
+    },
+    label: {
+      fontSize: '14px',
+      lineHeight: '150%',
+    },
+  },
 };
 
 export default theme;
