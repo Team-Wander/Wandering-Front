@@ -1,6 +1,7 @@
 import { UseFormRegisterReturn } from 'react-hook-form';
 
 export default interface InputType {
+  title?: string;
   placeholder: string;
   register?: UseFormRegisterReturn;
   value?: string;
@@ -9,4 +10,7 @@ export default interface InputType {
   ) => void;
   defaultValue?: string;
   icon?: boolean;
+  required?: boolean;
+  maxlength?: number;
+  unit?: string;
 }
