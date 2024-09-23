@@ -1,3 +1,3 @@
-export * from "./Modal";
-export * from "./Post";
-export * from "./Input"
+export * from './Modal';
+export * from './Post';
+export * from './Input';
