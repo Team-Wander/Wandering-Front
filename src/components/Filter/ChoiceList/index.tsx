@@ -1,18 +1,21 @@
-import React, { useEffect } from 'react';
+import React, { useState } from 'react';
 import * as S from './style';
 import ChoiceButton from './ChoiceButton';
-// import {
-//   genderType,
-//   gradeType,
-//   tagType,
-// } from 'types/Card';
 
 interface Props {
   label: string;
-  // data: genderType[] | tagType[] | gradeType[];
+  showLabel?: boolean;
+  onChange?: (selected: string[]) => void;
 }
 
-const ChoiceList = ({ label }: Props) => {
+const ChoiceList = ({
+  label,
+  showLabel = true,
+  onChange,
+}: Props) => {
+  const [selectedItems, setSelectedItems] =
+    useState<string[]>([]);
+
   const filterData = (label: string) => {
     switch (label) {
       case '태그':
@@ -41,15 +44,34 @@ const ChoiceList = ({ label }: Props) => {
     }
   };
 
-  useEffect(() => {
-    console.log(filterData(label));
-  }, [label]);
+  const handleButtonClick = (
+    text: string,
+    clicked: boolean,
+  ) => {
+    let updatedSelection;
+    if (clicked) {
+      updatedSelection = [...selectedItems, text];
+    } else {
+      updatedSelection = selectedItems.filter(
+        (item) => item !== text,
+      );
+    }
+    setSelectedItems(updatedSelection);
+    if (onChange) {
+      onChange(updatedSelection);
+    }
+  };
+
   return (
     <S.Wrapper>
-      <S.Label>{label}</S.Label>
+      {showLabel && <S.Label>{label}</S.Label>}
       <S.List>
         {filterData(label).map((item, idx) => (
-          <ChoiceButton key={idx} text={item} />
+          <ChoiceButton
+            key={idx}
+            text={item}
+            onClick={handleButtonClick}
+          />
         ))}
       </S.List>
     </S.Wrapper>

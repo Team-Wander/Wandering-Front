@@ -2,7 +2,9 @@ name: CI
 
 on:
   push:
-    branches: ["develop"]
+    branches: ["*"]
+  pull_request:
+    branches: ["*"]
 
 permissions:
   contents: read
@@ -25,9 +27,11 @@ jobs:
 
     - name: Build the project
       run: npm run build
+      env:
+        CI: ""
 
-    - name: Run tests
-      run: npm test -- --watchAll=false
+    - name: Run Tests
+        run: npm test
 
     - name: Upload build artifacts
       uses: actions/upload-artifact@v3

@@ -2,13 +2,12 @@ import React, {
   forwardRef,
   useState,
 } from 'react';
-import { InputType } from 'types';
+import { TextareaType } from 'types';
 import * as S from './style';
-import SearchIcon from 'svg/SearchIcon';
 
-const Input = forwardRef<
-  HTMLInputElement,
-  InputType
+const Textarea = forwardRef<
+  HTMLTextAreaElement,
+  TextareaType
 >(
   (
     {
@@ -17,10 +16,8 @@ const Input = forwardRef<
       register,
       onChange,
       defaultValue,
-      icon = false,
       required = false,
       maxlength = 0,
-      unit,
       ...props
     },
     ref,
@@ -40,9 +37,8 @@ const Input = forwardRef<
             </S.maxlength>
           )}
         </S.Label>
-        <S.InputBox>
-          <S.Input
-            type="text"
+        <S.TextareaBox>
+          <S.Textarea
             placeholder={placeholder}
             defaultValue={defaultValue}
             {...register}
@@ -52,18 +48,12 @@ const Input = forwardRef<
               setCharCount(e.target.value.length)
             }
           />
-          {icon && (
-            <S.Icon>
-              <SearchIcon />
-            </S.Icon>
-          )}
-          {unit && <S.Unit>{unit}</S.Unit>}
-        </S.InputBox>
+        </S.TextareaBox>
       </div>
     );
   },
 );
 
-Input.displayName = 'Input';
+Textarea.displayName = 'Textarea';
 
-export default Input;
+export default Textarea;

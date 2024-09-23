@@ -3,20 +3,31 @@ import * as S from './style';
 
 interface Props {
   text: string;
+  onClick?: (
+    text: string,
+    clicked: boolean,
+  ) => void;
 }
 
-const ChoiceButton = ({ text }: Props) => {
-  const [click, setClick] =
+const ChoiceButton = ({
+  text,
+  onClick,
+}: Props) => {
+  const [clicked, setClicked] =
     useState<boolean>(false);
 
+  const handleClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    setClicked(!clicked);
+    if (onClick) onClick(text, !clicked);
+  };
+
   return (
-    <>
-      <S.Button
-        clicked={click}
-        onClick={() => setClick(!click)}>
-        {text}
-      </S.Button>
-    </>
+    <S.Button
+      clicked={clicked}
+      onClick={handleClick}>
+      {text}
+    </S.Button>
   );
 };
 
