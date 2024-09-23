@@ -1,8 +1,7 @@
 import styled from '@emotion/styled';
 
-export const InputBox = styled.div`
+export const TextareaBox = styled.div`
   position: relative;
-  display: flex;
   align-items: center;
   gap: 0.25rem;
   width: 100%;
@@ -14,23 +13,16 @@ export const InputBox = styled.div`
   :focus-within {
     border-color: var(--PRIMARY, #36c05c);
   }
+  height: 188px;
 `;
 
-export const Input = styled.input`
-  flex: 1;
+export const Textarea = styled.textarea`
   border: none;
   outline: none;
-  background: transparent;
-  padding-right: 2rem;
+  height: 100%;
+  width: 100%;
+  resize: none;
 `;
-
-export const PositionedRight = styled.div`
-  position: absolute;
-  right: 1rem;
-`;
-
-export const Icon = styled(PositionedRight)``;
-export const Unit = styled(PositionedRight)``;
 
 export const title = styled.div`
   span {
