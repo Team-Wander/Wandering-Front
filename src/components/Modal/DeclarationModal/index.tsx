@@ -3,7 +3,7 @@ import Container from '../container';
 import * as S from './style';
 import { XIcon, SelectButton } from 'svg';
 import { ReportType } from 'types';
-import { useNavigate } from 'react-router-dom';
+// import { useNavigate } from 'react-router-dom';
 
 interface Props {
   onClose: () => void;
@@ -12,7 +12,7 @@ interface Props {
 
 const DeclarationModal: React.FC<Props> = ({
   onClose,
-  postId,
+  // postId,
 }) => {
   // const [id, setId] = useState(postId); //추후에 신고할 게시물의 아이디를 받아와서 백엔드에게 보내줄 예정
   // const navigation = useNavigate();
