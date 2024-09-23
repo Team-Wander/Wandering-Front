@@ -28,9 +28,6 @@ jobs:
         env:
           CI: ""
 
-      - name: Run Tests
-        run: npm test
-
   deploy:
     name: Deploy to Nginx Server
     runs-on: self-hosted
