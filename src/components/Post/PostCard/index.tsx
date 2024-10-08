@@ -2,7 +2,7 @@ import React from 'react';
 import * as S from './style';
 import { Card } from 'types/Card';
 import TagList from './TagList';
-import MateList from './MateList';
+import MateList from '../../MateList';
 
 const PostCard = ({
   author,

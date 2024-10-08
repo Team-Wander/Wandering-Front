@@ -5,7 +5,7 @@ import {
   gradeType,
   genderType,
 } from 'types/Card';
-import MateList from 'components/Post/PostCard/MateList';
+import MateList from 'components/MateList';
 
 interface Props {
   onClose?: () => void;
