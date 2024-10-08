@@ -22,12 +22,12 @@ interface data {
   };
 }
 
-const ApproveAppointmentModal: React.FC<
-  Props
-> = ({ onClose }) => {
+const ApproveAppointmentModal = ({
+  onClose,
+}: Props) => {
   const [data, setData] = useState<data>({
-    title: 'hello',
-    grade: ['ONE'],
+    title: '',
+    grade: [],
     gender: 'ANY',
     profile: {
       img: '',
@@ -40,14 +40,18 @@ const ApproveAppointmentModal: React.FC<
     <S.Wrapper>
       <S.TitleBox>
         <S.Title onClick={onClose}>
-          {data?.title}
+          {data.title}
         </S.Title>
         <MateList
-          grade={data?.grade}
-          gender={data?.gender}></MateList>
+          grade={data.grade}
+          gender={data.gender}></MateList>
       </S.TitleBox>
       <S.Contents onClick={() => setData(data)}>
-        <Profile />
+        <Profile
+          imgUrl={data.profile.img}
+          name={data.profile.name}
+          school={data.profile.info}
+        />
         <S.ButtonWrapper>
           <S.Button agreement>수락</S.Button>
           <S.Button agreement={false}>

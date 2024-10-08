@@ -8,8 +8,7 @@ export const Wrapper = styled.div`
   align-items: flex-start;
   gap: 1.25rem;
   border-radius: 0.5rem;
-  /* background: white; */
-  background: lightgrey;
+  background: white;
 `;
 
 export const TitleBox = styled.div`
