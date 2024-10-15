@@ -32,40 +32,30 @@ const Member = () => {
   };
 
   const [select, setSelect] = useState(false);
-  const [option, setOption] = useState(
-    options.normal,
-  );
+  const [option, setOption] = useState(options.normal);
 
   return (
     <S.Container>
-      <Profile
-        imgUrl={''}
-        name={''}
-        school={''}
-      />
+      <Profile imgUrl={''} name={''} school={''} />
       <S.SelectBox>
         <S.Option
           option={option.option}
-          onClick={() =>
-            setSelect((prev) => !prev)
-          }>
+          onClick={() => setSelect((prev) => !prev)}>
           {option.value}
           <DownArrow />
         </S.Option>
         <S.OptionBox selected={select}>
-          {Object.entries(options).map(
-            ([option, item]) => (
-              <S.Option
-                key={option}
-                option={option}
-                onClick={() => {
-                  setOption(item);
-                  setSelect((prev) => !prev);
-                }}>
-                {item.value}
-              </S.Option>
-            ),
-          )}
+          {Object.entries(options).map(([option, item]) => (
+            <S.Option
+              key={option}
+              option={option}
+              onClick={() => {
+                setOption(item);
+                setSelect((prev) => !prev);
+              }}>
+              {item.value}
+            </S.Option>
+          ))}
         </S.OptionBox>
       </S.SelectBox>
     </S.Container>

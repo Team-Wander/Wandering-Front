@@ -9,6 +9,5 @@ export const Container = styled.div`
   align-items: center;
   gap: 1.5rem;
   border-radius: 0.5rem;
-  border: 1px solid
-    ${({ theme }) => theme.color.gray[100]};
+  border: 1px solid ${({ theme }) => theme.color.gray[100]};
 `;

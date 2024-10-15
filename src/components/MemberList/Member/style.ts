@@ -15,17 +15,14 @@ export const SelectBox = styled.div`
 export const OptionBox = styled.ul<{
   selected: boolean;
 }>`
-  display: ${({ selected }) =>
-    selected ? 'flex' : 'none'};
+  display: ${({ selected }) => (selected ? 'flex' : 'none')};
   flex-direction: column;
 
   position: absolute;
-  border: 1px solid
-    ${({ theme }) => theme.color.gray[100]};
+  border: 1px solid ${({ theme }) => theme.color.gray[100]};
   border-radius: 0.75rem;
 
-  background-color: ${({ theme }) =>
-    theme.color.white};
+  background-color: ${({ theme }) => theme.color.white};
 
   padding: 0.75rem 1.25rem;
   margin-top: 2rem;
