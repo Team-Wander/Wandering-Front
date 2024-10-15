@@ -46,7 +46,9 @@ const Member = () => {
       <S.SelectBox>
         <S.Option
           option={option.option}
-          onClick={() => setSelect(true)}>
+          onClick={() =>
+            setSelect((prev) => !prev)
+          }>
           {option.value}
           <DownArrow />
         </S.Option>
@@ -58,7 +60,7 @@ const Member = () => {
                 option={option}
                 onClick={() => {
                   setOption(item);
-                  setSelect(false);
+                  setSelect((prev) => !prev);
                 }}>
                 {item.value}
               </S.Option>
