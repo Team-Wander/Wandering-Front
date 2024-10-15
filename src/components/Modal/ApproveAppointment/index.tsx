@@ -1,10 +1,7 @@
 import React, { useState } from 'react';
 import * as S from './style';
 import { Profile } from 'components';
-import {
-  gradeType,
-  genderType,
-} from 'types/Card';
+import { gradeType, genderType } from 'types/Card';
 import MateList from 'components/MateList';
 
 interface Props {
@@ -22,9 +19,7 @@ interface data {
   };
 }
 
-const ApproveAppointmentModal = ({
-  onClose,
-}: Props) => {
+const ApproveAppointmentModal = ({ onClose }: Props) => {
   const [data, setData] = useState<data>({
     title: '',
     grade: [],
@@ -39,12 +34,8 @@ const ApproveAppointmentModal = ({
   return (
     <S.Wrapper>
       <S.TitleBox>
-        <S.Title onClick={onClose}>
-          {data.title}
-        </S.Title>
-        <MateList
-          grade={data.grade}
-          gender={data.gender}></MateList>
+        <S.Title onClick={onClose}>{data.title}</S.Title>
+        <MateList grade={data.grade} gender={data.gender}></MateList>
       </S.TitleBox>
       <S.Contents onClick={() => setData(data)}>
         <Profile
@@ -54,9 +45,7 @@ const ApproveAppointmentModal = ({
         />
         <S.ButtonWrapper>
           <S.Button agreement>수락</S.Button>
-          <S.Button agreement={false}>
-            거절
-          </S.Button>
+          <S.Button agreement={false}>거절</S.Button>
         </S.ButtonWrapper>
       </S.Contents>
     </S.Wrapper>

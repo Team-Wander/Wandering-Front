@@ -27,20 +27,12 @@ const SearchList = ({ word }: Props) => {
 
   return (
     <S.Wrapper>
-      <S.HeaderText>
-        검색{word ? '결과' : '기록'}
-      </S.HeaderText>
+      <S.HeaderText>검색{word ? '결과' : '기록'}</S.HeaderText>
       <S.List>
         {temp
-          .filter((item) =>
-            item.title.includes(word),
-          )
+          .filter((item) => item.title.includes(word))
           .map((item) => (
-            <SearchItem
-              key={item.id}
-              title={item.title}
-              author={item.author}
-            />
+            <SearchItem key={item.id} title={item.title} author={item.author} />
           ))}
       </S.List>
     </S.Wrapper>

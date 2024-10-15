@@ -11,3 +11,4 @@ export { default as PinIcon } from './PinIcon';
 export { default as Profile } from './Profile';
 export { default as SearchIcon } from './SearchIcon';
 export { default as SelectButton } from './SelectButton';
+export { default as XIcon } from './XIcon';
