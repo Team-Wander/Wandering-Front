@@ -26,8 +26,7 @@ export const CheckboxLabel = styled.div<{
 }>`
   width: 24px;
   height: 24px;
-  background: ${(props) =>
-    props.checked ? '#36C05C' : '#EFF0F2'};
+  background: ${(props) => (props.checked ? '#36C05C' : '#EFF0F2')};
   border-radius: 4px;
   display: flex;
   align-items: center;
@@ -36,8 +35,7 @@ export const CheckboxLabel = styled.div<{
   cursor: pointer;
 
   svg {
-    visibility: ${(props) =>
-      props.checked ? 'visible' : 'hidden'};
+    visibility: ${(props) => (props.checked ? 'visible' : 'hidden')};
   }
 `;
 

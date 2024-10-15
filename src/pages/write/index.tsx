@@ -1,11 +1,5 @@
-import React, {
-  useState,
-  useEffect,
-} from 'react';
-import {
-  useForm,
-  SubmitHandler,
-} from 'react-hook-form';
+import React, { useState, useEffect } from 'react';
+import { useForm, SubmitHandler } from 'react-hook-form';
 import * as S from './style';
 import Input from 'components/Input';
 import ChevronRight from 'svg/ChevronRight';
@@ -25,24 +19,17 @@ interface FormValues {
 }
 
 const Write = () => {
-  const { register, handleSubmit, setValue } =
-    useForm<FormValues>();
-  const [selectedTags, setSelectedTags] =
-    useState<string[]>([]);
-  const [selectedGrades, setSelectedGrades] =
-    useState<string[]>([]);
-  const [selectedGender, setSelectedGender] =
-    useState<string[]>([]);
-  const [selectedContact, setSelectedContact] =
-    useState<string[]>([]);
+  const { register, handleSubmit, setValue } = useForm<FormValues>();
+  const [selectedTags, setSelectedTags] = useState<string[]>([]);
+  const [selectedGrades, setSelectedGrades] = useState<string[]>([]);
+  const [selectedGender, setSelectedGender] = useState<string[]>([]);
+  const [selectedContact, setSelectedContact] = useState<string[]>([]);
 
   useEffect(() => {
     setValue('tags', selectedTags);
   }, [selectedTags, setValue]);
 
-  const onSubmit: SubmitHandler<FormValues> = (
-    data,
-  ) => {
+  const onSubmit: SubmitHandler<FormValues> = (data) => {
     if (selectedTags.length === 0) {
       alert('태그를 최소 1개 선택해 주세요.');
       return;
@@ -58,27 +45,19 @@ const Write = () => {
     console.log('제출된 값:', formData);
   };
 
-  const handleTagSelect = (
-    selected: string[],
-  ) => {
+  const handleTagSelect = (selected: string[]) => {
     setSelectedTags(selected);
   };
 
-  const handleGradeSelect = (
-    selected: string[],
-  ) => {
+  const handleGradeSelect = (selected: string[]) => {
     setSelectedGrades(selected);
   };
 
-  const handleGenderSelect = (
-    selected: string[],
-  ) => {
+  const handleGenderSelect = (selected: string[]) => {
     setSelectedGender(selected);
   };
 
-  const handleContactSelect = (
-    selected: string[],
-  ) => {
+  const handleContactSelect = (selected: string[]) => {
     setSelectedContact(selected);
   };
 
@@ -127,9 +106,7 @@ const Write = () => {
             </S.List>
           </div>
           <div>
-            <div>
-              구해요 - 학년 (중복 선택 가능)
-            </div>
+            <div>구해요 - 학년 (중복 선택 가능)</div>
             <S.List>
               <ChoiceList
                 label={'학년'}
@@ -139,9 +116,7 @@ const Write = () => {
             </S.List>
           </div>
           <div>
-            <div>
-              구해요 - 성별 (중복 선택 가능)
-            </div>
+            <div>구해요 - 성별 (중복 선택 가능)</div>
             <S.List>
               <ChoiceList
                 label={'성별'}
@@ -152,9 +127,7 @@ const Write = () => {
           </div>
           <div>
             <div>연락처</div>
-            <CheckboxList
-              onChange={handleContactSelect}
-            />
+            <CheckboxList onChange={handleContactSelect} />
           </div>
           <Input
             title="최대인원"
@@ -165,9 +138,7 @@ const Write = () => {
             })}
           />
         </S.InputContainer>
-        <S.Button type="submit">
-          제출하기
-        </S.Button>
+        <S.Button type="submit">제출하기</S.Button>
       </form>
     </S.Container>
   );

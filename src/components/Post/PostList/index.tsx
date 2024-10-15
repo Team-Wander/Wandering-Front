@@ -12,8 +12,7 @@ const PostList = () => {
       author_school: 'XYZ University',
       author_gender: 'MALE',
       author_grade: 'FOUR',
-      content:
-        'This is a comprehensive guide to understanding TypeScript.',
+      content: 'This is a comprehensive guide to understanding TypeScript.',
       date: new Date('2024-09-04'),
       maximum: 100,
       gender: 'FEMALE',
@@ -27,8 +26,7 @@ const PostList = () => {
       author_school: 'ABC College',
       author_gender: 'FEMALE',
       author_grade: 'THREE',
-      content:
-        'Exploring advanced techniques in React development.',
+      content: 'Exploring advanced techniques in React development.',
       date: new Date('2024-08-15'),
       maximum: 50,
       gender: 'MALE',
@@ -42,8 +40,7 @@ const PostList = () => {
       author_school: 'LMN Institute',
       author_gender: 'FEMALE',
       author_grade: 'TWO',
-      content:
-        "A beginner's guide to microservices architecture.",
+      content: "A beginner's guide to microservices architecture.",
       date: new Date('2024-07-20'),
       maximum: 75,
       gender: 'FEMALE',

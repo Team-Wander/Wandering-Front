@@ -49,8 +49,6 @@ export const Button = styled.button<{
   border: 0;
   border-radius: 0.5rem;
   background: ${({ theme, agreement }) =>
-    agreement
-      ? theme.color.main
-      : theme.color.system};
+    agreement ? theme.color.main : theme.color.system};
   color: ${({ theme }) => theme.color.white};
 `;

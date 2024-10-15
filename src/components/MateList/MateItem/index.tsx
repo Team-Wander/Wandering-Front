@@ -1,9 +1,6 @@
 import React from 'react';
 import * as S from './style';
-import {
-  genderType,
-  gradeType,
-} from 'types/Card';
+import { genderType, gradeType } from 'types/Card';
 
 interface Props {
   data: genderType | gradeType;

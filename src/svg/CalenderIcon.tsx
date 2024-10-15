@@ -25,12 +25,7 @@ const CalenderIcon = () => {
         stroke="#8F9094"
         strokeWidth="2"
       />
-      <path
-        d="M8 2V4"
-        stroke="#8F9094"
-        strokeWidth="2"
-        strokeLinecap="round"
-      />
+      <path d="M8 2V4" stroke="#8F9094" strokeWidth="2" strokeLinecap="round" />
       <path
         d="M16 2V4"
         stroke="#8F9094"

@@ -1,15 +1,9 @@
-import React, {
-  forwardRef,
-  useState,
-} from 'react';
+import React, { forwardRef, useState } from 'react';
 import { InputType } from 'types';
 import * as S from './style';
 import SearchIcon from 'svg/SearchIcon';
 
-const Input = forwardRef<
-  HTMLInputElement,
-  InputType
->(
+const Input = forwardRef<HTMLInputElement, InputType>(
   (
     {
       title,
@@ -48,9 +42,7 @@ const Input = forwardRef<
             {...register}
             {...props}
             ref={ref}
-            onChange={(e) =>
-              setCharCount(e.target.value.length)
-            }
+            onChange={(e) => setCharCount(e.target.value.length)}
           />
           {icon && (
             <S.Icon>
