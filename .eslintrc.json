@@ -11,7 +11,7 @@
       "version": "detect"
     }
   },
-  "extends": ["react-app", "react-app/jest", "prettier", "eslint"],
+  "extends": ["react-app", "react-app/jest", "prettier", "eslint:recommended"],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
     "ecmaVersion": "latest",
