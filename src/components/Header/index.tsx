@@ -11,10 +11,8 @@ import {
 import SearchList from './SearchList';
 
 const Header = () => {
-  const [focus, setFocus] =
-    useState<boolean>(false);
-  const [keyword, setKeyword] =
-    useState<string>('');
+  const [focus, setFocus] = useState<boolean>(false);
+  const [keyword, setKeyword] = useState<string>('');
 
   return (
     <S.Container>
@@ -26,9 +24,7 @@ const Header = () => {
           <S.Input
             value={keyword}
             placeholder="이름, 제목으로 원하는 글을 찾아보세요!"
-            onChange={(e) =>
-              setKeyword(e.target.value)
-            }
+            onChange={(e) => setKeyword(e.target.value)}
             onFocus={() => setFocus(true)}
             onBlur={() => setFocus(false)}
           />

@@ -1,3 +1,4 @@
+import React from 'react';
 import { UseFormRegisterReturn } from 'react-hook-form';
 
 export default interface TextareaType {
@@ -5,9 +6,7 @@ export default interface TextareaType {
   placeholder: string;
   register?: UseFormRegisterReturn;
   value?: string;
-  onChange?: (
-    e: React.ChangeEvent<HTMLTextAreaElement>,
-  ) => void;
+  onChange?: (e: React.ChangeEvent<HTMLTextAreaElement>) => void;
   defaultValue?: string;
   required?: boolean;
   maxlength?: number;

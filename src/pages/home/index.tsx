@@ -8,27 +8,21 @@ import Banner from 'components/Banner';
 import { FilterIcon } from 'svg/index';
 
 const Home = () => {
-  const [modal, setModal] =
-    useState<boolean>(false);
+  const [modal, setModal] = useState<boolean>(false);
 
   return (
     <>
-      <Header></Header>
+      <Header />
       <S.Container>
         <Banner />
         <S.Nav>
           <Location />
           <S.FilterContainer>
-            <S.FilterButton
-              onClick={() => setModal(true)}>
+            <S.FilterButton onClick={() => setModal(true)}>
               <FilterIcon />
               필터
             </S.FilterButton>
-            {modal && (
-              <Filter
-                onClose={() => setModal(false)}
-              />
-            )}
+            {modal && <Filter onClose={() => setModal(false)} />}
           </S.FilterContainer>
         </S.Nav>
         <PostList />

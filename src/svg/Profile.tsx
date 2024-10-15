@@ -9,12 +9,7 @@ const Profile = () => {
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       xmlnsXlink="http://www.w3.org/1999/xlink">
-      <circle
-        cx="12"
-        cy="12"
-        r="12"
-        fill="url(#pattern0_3694_2544)"
-      />
+      <circle cx="12" cy="12" r="12" fill="url(#pattern0_3694_2544)" />
       <defs>
         <pattern
           id="pattern0_3694_2544"

@@ -1,7 +1,4 @@
-export type genderType =
-  | 'MALE'
-  | 'FEMALE'
-  | 'ANY';
+export type genderType = 'MALE' | 'FEMALE' | 'ANY';
 export type tagType =
   | 'WALK'
   | 'WORRY'
