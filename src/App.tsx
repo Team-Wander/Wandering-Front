@@ -7,10 +7,7 @@ function App() {
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/write" element={<Write />} />
-      <Route
-        path="/input"
-        element={<InputPage />}
-      />
+      <Route path="/input" element={<InputPage />} />
     </Routes>
   );
 }

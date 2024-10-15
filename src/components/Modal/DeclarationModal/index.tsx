@@ -59,9 +59,7 @@ const DeclarationModal: React.FC<Props> = ({
     },
   ];
 
-  const selectHandler = (
-    e: React.MouseEvent<HTMLDivElement>,
-  ) => {
+  const selectHandler = (e: React.MouseEvent<HTMLDivElement>) => {
     const target = e.target as HTMLDivElement;
     const id = parseInt(target.id) - 1;
 
@@ -74,8 +72,7 @@ const DeclarationModal: React.FC<Props> = ({
 
   const onSubmitHandler = () => {
     if (isSelect.find((el) => el === true)) {
-      if (isSelect[3] && reason.length <= 0)
-        alert('신고 이유를 작성해주세요');
+      if (isSelect[3] && reason.length <= 0) alert('신고 이유를 작성해주세요');
       else {
         alert('신고가 되었습니다.');
         // navigation(-1);
@@ -101,10 +98,7 @@ const DeclarationModal: React.FC<Props> = ({
                 key={el.id}
                 id={el.id.toString()}
                 onClick={selectHandler}>
-                <SelectButton
-                  id={el.id.toString()}
-                  isSelect={isSelect[idx]}
-                />
+                <SelectButton id={el.id.toString()} isSelect={isSelect[idx]} />
                 {el.name}
               </S.Option>
             ))}
@@ -114,15 +108,11 @@ const DeclarationModal: React.FC<Props> = ({
               type="text-area"
               placeholder="신고 사유를 적어주세요"
               value={reason}
-              onChange={(e) =>
-                setReason(e.target.value)
-              }
+              onChange={(e) => setReason(e.target.value)}
             />
           )}
         </S.ContentsBox>
-        <S.SubmitButton onClick={onSubmitHandler}>
-          신고
-        </S.SubmitButton>
+        <S.SubmitButton onClick={onSubmitHandler}>신고</S.SubmitButton>
       </S.Wrapper>
     </Container>
   );

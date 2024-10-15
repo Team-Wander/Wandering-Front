@@ -8,25 +8,13 @@ interface Props {
   onChange?: (selected: string[]) => void;
 }
 
-const ChoiceList = ({
-  label,
-  showLabel = true,
-  onChange,
-}: Props) => {
-  const [selectedItems, setSelectedItems] =
-    useState<string[]>([]);
+const ChoiceList = ({ label, showLabel = true, onChange }: Props) => {
+  const [selectedItems, setSelectedItems] = useState<string[]>([]);
 
   const filterData = (label: string) => {
     switch (label) {
       case '태그':
-        return [
-          '산책',
-          '고민',
-          '잡담',
-          '운동',
-          '공부',
-          '외출',
-        ];
+        return ['산책', '고민', '잡담', '운동', '공부', '외출'];
       case '성별':
         return ['남자', '여자', '성별무관'];
       case '학년':
@@ -44,17 +32,12 @@ const ChoiceList = ({
     }
   };
 
-  const handleButtonClick = (
-    text: string,
-    clicked: boolean,
-  ) => {
+  const handleButtonClick = (text: string, clicked: boolean) => {
     let updatedSelection;
     if (clicked) {
       updatedSelection = [...selectedItems, text];
     } else {
-      updatedSelection = selectedItems.filter(
-        (item) => item !== text,
-      );
+      updatedSelection = selectedItems.filter((item) => item !== text);
     }
     setSelectedItems(updatedSelection);
     if (onChange) {
@@ -67,11 +50,7 @@ const ChoiceList = ({
       {showLabel && <S.Label>{label}</S.Label>}
       <S.List>
         {filterData(label).map((item, idx) => (
-          <ChoiceButton
-            key={idx}
-            text={item}
-            onClick={handleButtonClick}
-          />
+          <ChoiceButton key={idx} text={item} onClick={handleButtonClick} />
         ))}
       </S.List>
     </S.Wrapper>

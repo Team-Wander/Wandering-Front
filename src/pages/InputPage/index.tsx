@@ -1,8 +1,5 @@
 import React from 'react';
-import {
-  useForm,
-  SubmitHandler,
-} from 'react-hook-form';
+import { useForm, SubmitHandler } from 'react-hook-form';
 import * as S from './style';
 import Input from 'components/Input';
 
@@ -11,12 +8,9 @@ interface FormValues {
 }
 
 const InputPage = () => {
-  const { register, handleSubmit } =
-    useForm<FormValues>();
+  const { register, handleSubmit } = useForm<FormValues>();
 
-  const onSubmit: SubmitHandler<FormValues> = (
-    data,
-  ) => {
+  const onSubmit: SubmitHandler<FormValues> = (data) => {
     console.log('제출된 값:', data.search);
   };
 
