@@ -16,6 +16,8 @@ const Input = forwardRef<
       placeholder,
       register,
       onChange,
+      onClick,
+      onBlur,
       defaultValue,
       icon = false,
       required = false,
@@ -26,6 +28,17 @@ const Input = forwardRef<
     ref,
   ) => {
     const [charCount, setCharCount] = useState(0);
+
+    const handleChange = (
+      e: React.ChangeEvent<HTMLInputElement>,
+    ) => {
+      const value = e.target.value;
+      setCharCount(value.length);
+      if (onChange) {
+        onChange(e);
+      }
+    };
+
     return (
       <div>
         <S.Label>
@@ -45,12 +58,17 @@ const Input = forwardRef<
             type="text"
             placeholder={placeholder}
             defaultValue={defaultValue}
+            maxLength={
+              maxlength > 0
+                ? maxlength
+                : undefined
+            }
             {...register}
             {...props}
             ref={ref}
-            onChange={(e) =>
-              setCharCount(e.target.value.length)
-            }
+            onChange={handleChange}
+            onClick={onClick}
+            onBlur={onBlur}
           />
           {icon && (
             <S.Icon>

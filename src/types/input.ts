@@ -1,6 +1,7 @@
 import { UseFormRegisterReturn } from 'react-hook-form';
 
 export default interface InputType {
+  id?: string;
   title?: string;
   placeholder: string;
   register?: UseFormRegisterReturn;
@@ -8,6 +9,8 @@ export default interface InputType {
   onChange?: (
     e: React.ChangeEvent<HTMLInputElement>,
   ) => void;
+  onClick?: React.MouseEventHandler<HTMLInputElement>;
+  onBlur?: React.FocusEventHandler<HTMLInputElement>;
   defaultValue?: string;
   icon?: boolean;
   required?: boolean;
