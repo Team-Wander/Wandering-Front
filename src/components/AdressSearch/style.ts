@@ -10,7 +10,7 @@ export const SearchResultsContainer = styled.div`
   width: 100%;
   border: 1px solid #eff0f2;
   border-radius: 0.75rem;
-  padding: 28px 24px 0 24px;
+  padding: 28px 24px 0;
   box-sizing: border-box;
   max-height: 244px;
   overflow-y: scroll;
