@@ -15,9 +15,9 @@
     "axios": "^1.7.5",
     "eslint-config-airbnb": "^19.0.4",
     "eslint-import-resolver-babel-module": "^5.3.2",
-    "eslint-plugin-import": "^2.29.1",
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1",
+    "eslint-plugin-import": "^2.30.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "react-hook-form": "^7.53.0",
     "react-router-dom": "^6.26.1",
     "react-scripts": "5.0.1",
@@ -29,13 +29,16 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "lint": "eslint lint",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
     "format": "prettier --write **/*.{ts,tsx}"
   },
   "eslintConfig": {
     "extends": [
       "react-app",
-      "react-app/jest"
+      "react-app/jest",
+      "react",
+      "eslint:recommended"
     ]
   },
   "browserslist": {
@@ -51,16 +54,19 @@
     ]
   },
   "devDependencies": {
-    "@eslint/js": "^9.9.0",
-    "eslint": "^8.57.0",
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
+    "@eslint/js": "^9.11.0",
+    "eslint": "^8.0.0",
     "eslint-config-airbnb": "^19.0.4",
     "eslint-config-prettier": "^9.1.0",
     "eslint-config-react-app": "^7.0.1",
     "eslint-import-resolver-typescript": "^3.6.1",
+    "eslint-plugin-jsx-a11y": "^6.10.0",
     "eslint-plugin-prettier": "^5.2.1",
-    "eslint-plugin-react": "^7.35.0",
+    "eslint-plugin-react": "^7.0.1",
+    "eslint-plugin-react-hooks": "^4.6.2",
     "globals": "^15.9.0",
     "prettier": "^3.3.3",
-    "typescript-eslint": "^8.2.0"
+    "typescript-eslint": "^8.6.0"
   }
 }

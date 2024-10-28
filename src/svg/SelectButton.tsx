@@ -5,10 +5,7 @@ interface Props {
   isSelect: boolean;
 }
 
-const SelectButton = ({
-  id,
-  isSelect,
-}: Props) => {
+const SelectButton = ({ id, isSelect }: Props) => {
   return (
     <svg
       id={id}

@@ -5,11 +5,7 @@ export const Container = styled.div`
   width: 100%;
   height: 16rem;
   border-radius: 0.5rem;
-  background: linear-gradient(
-    262deg,
-    #9dffb8 -41.63%,
-    #58d47b 96.93%
-  );
+  background: linear-gradient(262deg, #9dffb8 -41.63%, #58d47b 96.93%);
   display: flex;
   align-items: center;
 `;

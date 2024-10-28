@@ -1,14 +1,8 @@
-import React, {
-  forwardRef,
-  useState,
-} from 'react';
+import React, { forwardRef, useState } from 'react';
 import { TextareaType } from 'types';
 import * as S from './style';
 
-const Textarea = forwardRef<
-  HTMLTextAreaElement,
-  TextareaType
->(
+const Textarea = forwardRef<HTMLTextAreaElement, TextareaType>(
   (
     {
       title,
@@ -44,9 +38,7 @@ const Textarea = forwardRef<
             {...register}
             {...props}
             ref={ref}
-            onChange={(e) =>
-              setCharCount(e.target.value.length)
-            }
+            onChange={(e) => setCharCount(e.target.value.length)}
           />
         </S.TextareaBox>
       </div>

@@ -3,7 +3,7 @@ import Container from '../container';
 import * as S from './style';
 import { XIcon, SelectButton } from 'svg';
 import { ReportType } from 'types';
-import { useNavigate } from 'react-router-dom';
+// import { useNavigate } from 'react-router-dom';
 
 interface Props {
   onClose: () => void;
@@ -12,7 +12,7 @@ interface Props {
 
 const DeclarationModal: React.FC<Props> = ({
   onClose,
-  postId,
+  // postId,
 }) => {
   // const [id, setId] = useState(postId); //추후에 신고할 게시물의 아이디를 받아와서 백엔드에게 보내줄 예정
   // const navigation = useNavigate();
@@ -59,9 +59,7 @@ const DeclarationModal: React.FC<Props> = ({
     },
   ];
 
-  const selectHandler = (
-    e: React.MouseEvent<HTMLDivElement>,
-  ) => {
+  const selectHandler = (e: React.MouseEvent<HTMLDivElement>) => {
     const target = e.target as HTMLDivElement;
     const id = parseInt(target.id) - 1;
 
@@ -74,8 +72,7 @@ const DeclarationModal: React.FC<Props> = ({
 
   const onSubmitHandler = () => {
     if (isSelect.find((el) => el === true)) {
-      if (isSelect[3] && reason.length <= 0)
-        alert('신고 이유를 작성해주세요');
+      if (isSelect[3] && reason.length <= 0) alert('신고 이유를 작성해주세요');
       else {
         alert('신고가 되었습니다.');
         // navigation(-1);
@@ -101,10 +98,7 @@ const DeclarationModal: React.FC<Props> = ({
                 key={el.id}
                 id={el.id.toString()}
                 onClick={selectHandler}>
-                <SelectButton
-                  id={el.id.toString()}
-                  isSelect={isSelect[idx]}
-                />
+                <SelectButton id={el.id.toString()} isSelect={isSelect[idx]} />
                 {el.name}
               </S.Option>
             ))}
@@ -114,15 +108,11 @@ const DeclarationModal: React.FC<Props> = ({
               type="text-area"
               placeholder="신고 사유를 적어주세요"
               value={reason}
-              onChange={(e) =>
-                setReason(e.target.value)
-              }
+              onChange={(e) => setReason(e.target.value)}
             />
           )}
         </S.ContentsBox>
-        <S.SubmitButton onClick={onSubmitHandler}>
-          신고
-        </S.SubmitButton>
+        <S.SubmitButton onClick={onSubmitHandler}>신고</S.SubmitButton>
       </S.Wrapper>
     </Container>
   );

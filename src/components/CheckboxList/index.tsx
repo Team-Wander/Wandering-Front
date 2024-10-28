@@ -29,20 +29,13 @@ interface CheckboxListProps {
   onChange: (selected: string[]) => void;
 }
 
-const CheckboxList: React.FC<
-  CheckboxListProps
-> = ({ onChange }) => {
-  const [checkboxes, setCheckboxes] = useState(
-    initialCheckboxes,
-  );
+const CheckboxList: React.FC<CheckboxListProps> = ({ onChange }) => {
+  const [checkboxes, setCheckboxes] = useState(initialCheckboxes);
 
-  const handleCheckboxChange = (
-    index: number,
-  ) => {
+  const handleCheckboxChange = (index: number) => {
     setCheckboxes((prevCheckboxes) => {
       const newCheckboxes = [...prevCheckboxes];
-      newCheckboxes[index].checked =
-        !newCheckboxes[index].checked;
+      newCheckboxes[index].checked = !newCheckboxes[index].checked;
 
       const selectedValues = newCheckboxes
         .filter((checkbox) => checkbox.checked)
@@ -61,18 +54,13 @@ const CheckboxList: React.FC<
             <S.StyledCheckbox
               type="checkbox"
               checked={checkbox.checked}
-              onChange={() =>
-                handleCheckboxChange(index)
-              }
+              onChange={() => handleCheckboxChange(index)}
             />
-            <S.CheckboxLabel
-              checked={checkbox.checked}>
+            <S.CheckboxLabel checked={checkbox.checked}>
               {checkbox.checked && <CheckBox />}
             </S.CheckboxLabel>
           </S.CheckboxWrapper>
-          <S.LabelText>
-            {checkbox.label}
-          </S.LabelText>
+          <S.LabelText>{checkbox.label}</S.LabelText>
         </S.CheckboxContainer>
       ))}
     </div>

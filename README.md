@@ -1,2 +1,3 @@
-# Wanderring-Client
-프로젝트 진행 중...
+# Wandering-Client
+
+퍼블리싱 진행중
