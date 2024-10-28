@@ -18,7 +18,8 @@ export const AuthorDataBox = styled.div`
 `;
 
 export const Author = styled.div`
-  color: #8f9094;
+  ${({ theme }) => theme.fontStyle.m3.reg}
+  color: ${({ theme }) => theme.color.gray[600]};
 `;
 
 export const Contour = styled.div`
@@ -33,7 +34,8 @@ export const AuthorData = styled.div`
   align-items: center;
   gap: 0.25rem;
   span {
-    color: #b4b5b7;
+    ${({ theme }) => theme.fontStyle.m3.reg}
+    color: ${({ theme }) => theme.color.gray[400]};
   }
 `;
 
@@ -41,9 +43,10 @@ export const Dot = styled.div`
   width: 4px;
   height: 4px;
   border-radius: 2px;
-  background-color: #b4b5b7;
+  background-color: ${({ theme }) => theme.color.gray[400]};
 `;
 
 export const Title = styled.div`
-  color: #333;
+  ${({ theme }) => theme.fontStyle.m1.semi}
+  color: ${({ theme }) => theme.color.black};
 `;

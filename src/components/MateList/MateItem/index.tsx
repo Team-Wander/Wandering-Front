@@ -3,10 +3,11 @@ import * as S from './style';
 import { genderType, gradeType } from 'types/Card';
 
 interface Props {
+  label: string;
   data: genderType | gradeType;
 }
 
-const MateItem = ({ data }: Props) => {
+const MateItem = ({ label, data }: Props) => {
   const text = {
     ONE: '1학년',
     TWO: '2학년',
@@ -16,7 +17,7 @@ const MateItem = ({ data }: Props) => {
     SIX: '6학년',
     MALE: '남자',
     FEMALE: '여자',
-    ANY: '성별무관',
+    ANY: label === '성별' ? '성별무관' : '학년무관',
   };
   return (
     <S.Container>
