@@ -1,7 +1,4 @@
-import React, {
-  useState,
-  useEffect,
-} from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import * as S from './style';
 import Input from 'components/Input';
 import {
@@ -16,24 +13,37 @@ interface AddressSearchProps {
   watch: UseFormWatch<any>;
 }
 
-const AddressSearch = ({
-  register,
-  setValue,
-  watch,
-}: AddressSearchProps) => {
-  const [results, setResults] = useState<
-    Array<[string, string, string]>
-  >([]);
-  const [errorMessage, setErrorMessage] =
-    useState('');
-  const [pickResult, setPickResult] =
-    useState(false);
-  const [showResults, setShowResults] =
-    useState(false);
-  const [resultClicked, setResultClicked] =
-    useState(false);
+const AddressSearch = ({ register, setValue, watch }: AddressSearchProps) => {
+  const [results, setResults] = useState<Array<[string, string, string]>>([]);
+  const [errorMessage, setErrorMessage] = useState('');
+  const [pickResult, setPickResult] = useState(false);
+  const [showResults, setShowResults] = useState(false);
+  const [resultClicked, setResultClicked] = useState(false);
 
   const promiseContent = watch('promise');
+
+  // handleApiResponse를 useCallback으로 메모이제이션
+  const handleApiResponse = useCallback((data: any) => {
+    if (data.results.common.errorCode === '0') {
+      const addresses = extractAddresses(data.results.juso);
+      setResults(addresses);
+      setErrorMessage('');
+    } else {
+      setResults([]);
+      setErrorMessage(data.results.common.errorMessage);
+    }
+  }, []);
+
+  const searchJuso = useCallback(
+    (query: string) => {
+      const confmKey = 'devU01TX0FVVEgyMDI0MTAwNjAyMzMwNDExNTEzMTg=';
+      const apiUrl = createApiUrl(confmKey, query);
+
+      (window as any).callbackFunc = (data: any) => handleApiResponse(data);
+      loadApiScript(apiUrl);
+    },
+    [handleApiResponse],
+  );
 
   useEffect(() => {
     if (!pickResult) {
@@ -46,18 +56,14 @@ const AddressSearch = ({
         setShowResults(false);
       }
     }
-  }, [promiseContent]);
+  }, [promiseContent, pickResult, searchJuso]);
 
-  const handleInputChange = (
-    e: React.ChangeEvent<HTMLInputElement>,
-  ) => {
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value || '';
     setValue('promise', value);
   };
 
-  const handleInputClick = (
-    e: React.MouseEvent<HTMLInputElement>,
-  ) => {
+  const handleInputClick = (e: React.MouseEvent<HTMLInputElement>) => {
     setPickResult(false);
     setShowResults(true);
     setResultClicked(false);
@@ -69,56 +75,23 @@ const AddressSearch = ({
     }
   };
 
-  const searchJuso = (query: string) => {
-    const confmKey =
-      'devU01TX0FVVEgyMDI0MTAwNjAyMzMwNDExNTEzMTg=';
-    const apiUrl = createApiUrl(confmKey, query);
-
-    (window as any).callbackFunc = (data: any) =>
-      handleApiResponse(data);
-    loadApiScript(apiUrl);
-  };
-
-  const createApiUrl = (
-    confmKey: string,
-    query: string,
-  ) => {
+  const createApiUrl = (confmKey: string, query: string) => {
     return `https://business.juso.go.kr/addrlink/addrLinkApiJsonp.do?confmKey=${confmKey}&keyword=${encodeURIComponent(query)}&resultType=json&callback=callbackFunc`;
   };
 
-  const handleApiResponse = (data: any) => {
-    if (data.results.common.errorCode === '0') {
-      const addresses = extractAddresses(
-        data.results.juso,
-      );
-      setResults(addresses);
-      setErrorMessage('');
-    } else {
-      setResults([]);
-      setErrorMessage(
-        data.results.common.errorMessage,
-      );
-    }
-  };
-
-  const extractAddresses = (
-    jusoList: any[],
-  ): [string, string, string][] => {
+  const extractAddresses = (jusoList: any[]): [string, string, string][] => {
     return jusoList.map(
       (item) =>
-        [
-          item.emdNm,
-          item.roadAddrPart1,
-          item.bdNm,
-        ] as [string, string, string],
+        [item.emdNm, item.roadAddrPart1, item.bdNm] as [string, string, string],
     );
   };
 
   const loadApiScript = (url: string) => {
-    const script =
-      document.createElement('script');
-    script.src = url;
-    document.body.appendChild(script);
+    if (!document.querySelector(`script[src="${url}"]`)) {
+      const script = document.createElement('script');
+      script.src = url;
+      document.body.appendChild(script);
+    }
   };
 
   const handleResultMouseDown = (
@@ -161,19 +134,12 @@ const AddressSearch = ({
             ? results.map((result, index) => (
                 <S.SearchResultItem
                   key={index}
-                  onMouseDown={(e) =>
-                    handleResultMouseDown(
-                      e,
-                      result,
-                    )
-                  }>
+                  onMouseDown={(e) => handleResultMouseDown(e, result)}>
                   <span>{result[0]} &nbsp;</span>
                   {result[1]} &nbsp; {result[2]}
                 </S.SearchResultItem>
               ))
-            : errorMessage && (
-                <div>{errorMessage}</div>
-              )}
+            : errorMessage && <div>{errorMessage}</div>}
           <S.BottomBlur />
         </S.SearchResultsContainer>
       )}

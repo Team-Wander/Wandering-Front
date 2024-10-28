@@ -23,9 +23,7 @@ const Input = forwardRef<HTMLInputElement, InputType>(
   ) => {
     const [charCount, setCharCount] = useState(0);
 
-    const handleChange = (
-      e: React.ChangeEvent<HTMLInputElement>,
-    ) => {
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
       const value = e.target.value;
       setCharCount(value.length);
       if (onChange) {
@@ -52,11 +50,7 @@ const Input = forwardRef<HTMLInputElement, InputType>(
             type="text"
             placeholder={placeholder}
             defaultValue={defaultValue}
-            maxLength={
-              maxlength > 0
-                ? maxlength
-                : undefined
-            }
+            maxLength={maxlength > 0 ? maxlength : undefined}
             {...register}
             {...props}
             ref={ref}

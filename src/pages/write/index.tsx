@@ -19,20 +19,11 @@ interface FormValues {
   contact: string[];
 }
 const Write = () => {
-  const {
-    register,
-    handleSubmit,
-    setValue,
-    watch,
-  } = useForm<FormValues>();
-  const [selectedTags, setSelectedTags] =
-    useState<string[]>([]);
-  const [selectedGrades, setSelectedGrades] =
-    useState<string[]>([]);
-  const [selectedGender, setSelectedGender] =
-    useState<string[]>([]);
-  const [selectedContact, setSelectedContact] =
-    useState<string[]>([]);
+  const { register, handleSubmit, setValue, watch } = useForm<FormValues>();
+  const [selectedTags, setSelectedTags] = useState<string[]>([]);
+  const [selectedGrades, setSelectedGrades] = useState<string[]>([]);
+  const [selectedGender, setSelectedGender] = useState<string[]>([]);
+  const [selectedContact, setSelectedContact] = useState<string[]>([]);
 
   useEffect(() => {
     setValue('tags', selectedTags);
