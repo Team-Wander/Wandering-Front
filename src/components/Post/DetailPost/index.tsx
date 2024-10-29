@@ -3,7 +3,7 @@ import * as S from './style';
 import Profile from './PostProfile';
 import MateList from 'components/MateList';
 import TagList from '../PostCard/TagList';
-import ReportIcon from 'svg/ReportIcon';
+import { ReportIcon } from 'svg';
 import { DeclarationModal } from 'components/Modal';
 
 const DetailPost = () => {

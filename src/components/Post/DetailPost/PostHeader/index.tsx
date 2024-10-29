@@ -1,6 +1,6 @@
 import React from 'react';
 import * as S from './style';
-import LeftArrow from 'svg/LeftArrow';
+import { LeftArrow } from 'svg';
 import { useNavigate } from 'react-router-dom';
 
 const PostHeader = () => {
