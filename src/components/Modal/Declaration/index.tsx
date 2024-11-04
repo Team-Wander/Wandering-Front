@@ -3,6 +3,7 @@ import Container from '../container';
 import * as S from './style';
 import { XIcon, SelectButton } from 'svg';
 import { ReportType } from 'types';
+import Portal from 'components/Portal';
 // import { useNavigate } from 'react-router-dom';
 
 interface Props {
@@ -83,38 +84,43 @@ const DeclarationModal: React.FC<Props> = ({
   };
 
   return (
-    <Container>
-      <S.Wrapper $etc={isSelect[3]}>
-        <S.Title>
-          신고 사유
-          <span onClick={onClose}>
-            <XIcon />
-          </span>
-        </S.Title>
-        <S.ContentsBox $etc={isSelect[3]}>
-          <S.OptionBox>
-            {report.map((el, idx) => (
-              <S.Option
-                key={el.id}
-                id={el.id.toString()}
-                onClick={selectHandler}>
-                <SelectButton id={el.id.toString()} isSelect={isSelect[idx]} />
-                {el.name}
-              </S.Option>
-            ))}
-          </S.OptionBox>
-          {isSelect[3] && (
-            <S.ReasonInput
-              type="text-area"
-              placeholder="신고 사유를 적어주세요"
-              value={reason}
-              onChange={(e) => setReason(e.target.value)}
-            />
-          )}
-        </S.ContentsBox>
-        <S.SubmitButton onClick={onSubmitHandler}>신고</S.SubmitButton>
-      </S.Wrapper>
-    </Container>
+    <Portal>
+      <Container>
+        <S.Wrapper $etc={isSelect[3]}>
+          <S.Title>
+            신고 사유
+            <span onClick={onClose}>
+              <XIcon />
+            </span>
+          </S.Title>
+          <S.ContentsBox $etc={isSelect[3]}>
+            <S.OptionBox>
+              {report.map((el, idx) => (
+                <S.Option
+                  key={el.id}
+                  id={el.id.toString()}
+                  onClick={selectHandler}>
+                  <SelectButton
+                    id={el.id.toString()}
+                    isSelect={isSelect[idx]}
+                  />
+                  {el.name}
+                </S.Option>
+              ))}
+            </S.OptionBox>
+            {isSelect[3] && (
+              <S.ReasonInput
+                type="text-area"
+                placeholder="신고 사유를 적어주세요"
+                value={reason}
+                onChange={(e) => setReason(e.target.value)}
+              />
+            )}
+          </S.ContentsBox>
+          <S.SubmitButton onClick={onSubmitHandler}>신고</S.SubmitButton>
+        </S.Wrapper>
+      </Container>
+    </Portal>
   );
 };
 

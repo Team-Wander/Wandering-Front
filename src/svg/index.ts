@@ -13,3 +13,5 @@ export { default as SearchIcon } from './SearchIcon';
 export { default as SelectButton } from './SelectButton';
 export { default as XIcon } from './XIcon';
 export { default as DownArrow } from './DownArrow';
+export { default as LeftArrow } from './LeftArrow';
+export { default as ReportIcon } from './ReportIcon';
