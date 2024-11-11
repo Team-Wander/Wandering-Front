@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import * as S from './style';
-import { Profile } from 'components';
+import { Profile, MateList } from 'components';
 import { gradeType, genderType } from 'types/card';
-import { MateList } from 'components';
 
 interface Props {
   onClose?: () => void;
@@ -35,7 +34,7 @@ const ApproveAppointmentModal = ({ onClose }: Props) => {
     <S.Wrapper>
       <S.TitleBox>
         <S.Title onClick={onClose}>{data.title}</S.Title>
-        <MateList grade={data.grade} gender={data.gender}></MateList>
+        <MateList grade={data.grade} gender={data.gender} />
       </S.TitleBox>
       <S.Contents onClick={() => setData(data)}>
         <Profile
