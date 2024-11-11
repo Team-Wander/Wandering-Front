@@ -1,10 +1,19 @@
 import styled from '@emotion/styled';
 
-export const Container = styled.header`
+export const Positioner = styled.div`
   display: flex;
-  padding: 1rem 21%;
+  justify-content: center;
+  padding: 1rem 0;
+`;
+
+export const Container = styled.header`
+  width: 68.75rem;
+  display: flex;
   justify-content: space-between;
   align-items: center;
+  @media (max-width: 1100px) {
+    width: 100%;
+  }
 `;
 
 export const LogoBox = styled.div`
@@ -17,18 +26,17 @@ export const Input = styled.input`
   outline: none;
   background: transparent;
   padding-right: 2rem;
+  z-index: 99;
 `;
 
-export const SearchBox = styled.div`
-  position: absolute;
-  top: 0.75rem;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 33.75rem;
+export const SearchBox = styled.div<{ focus: boolean }>`
+  position: relative;
+  width: 100%;
+  max-width: 33.75rem;
   padding: 0.75rem 1.25rem;
-  border: 1px solid #eff0f2;
+  border: ${({ focus }) => (focus ? '0' : '1px solid #eff0f2')};
   background: #fff;
-  border-radius: 0.75rem;
+  border-radius: ${({ focus }) => (focus ? '0.75rem 0.75rem 0 0' : '0.75rem')};
   display: flex;
   flex-direction: column;
   gap: 1.75rem;
@@ -36,9 +44,9 @@ export const SearchBox = styled.div`
 `;
 
 export const InputBox = styled.div`
-  position: relative;
   display: flex;
   align-items: center;
+  z-index: 99;
 `;
 
 export const SearchIcon = styled.div`
