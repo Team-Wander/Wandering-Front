@@ -1,12 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { useForm, SubmitHandler } from 'react-hook-form';
 import * as S from './style';
-import Input from 'components/Input';
+import {
+  Input,
+  TextArea,
+  CheckBoxList,
+  AddressSearch,
+  ChoiceList,
+} from 'components';
 import ChevronRight from 'svg/ChevronRight';
-import ChoiceList from 'components/Filter/ChoiceList';
-import Textarea from 'components/textarea';
-import CheckboxList from 'components/CheckboxList';
-import AddressSearch from 'components/AdressSearch';
 
 interface FormValues {
   title: string;
@@ -84,7 +86,7 @@ const Write = () => {
             setValue={setValue}
             watch={watch}
           />
-          <Textarea
+          <TextArea
             title="내용"
             placeholder="내용을 입력해 주세요"
             {...register('content', {
@@ -123,7 +125,7 @@ const Write = () => {
           </div>
           <div>
             <div>연락처</div>
-            <CheckboxList onChange={handleContactSelect} />
+            <CheckBoxList onChange={handleContactSelect} />
           </div>
           <Input
             title="최대인원"

@@ -1,6 +1,6 @@
 import React from 'react';
 import * as S from './style';
-import { Card } from 'types/Card';
+import Card from 'types/card';
 import MateItem from './MateItem';
 
 const MateList = ({ grade, gender }: Pick<Card, 'grade' | 'gender'>) => {

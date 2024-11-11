@@ -1,6 +1,6 @@
 import React from 'react';
 import * as S from './style';
-import { Card } from 'types/Card';
+import { Card } from 'types/Card/card';
 import TagItem from './TagItem';
 
 const TagList = ({ tag }: Pick<Card, 'tag'>) => {

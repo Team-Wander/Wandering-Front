@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import * as S from './style';
-import Input from 'components/Input';
+import { Input } from 'components';
 import {
   UseFormRegister,
   UseFormSetValue,

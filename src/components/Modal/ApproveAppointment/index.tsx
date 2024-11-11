@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import * as S from './style';
 import { Profile } from 'components';
-import { gradeType, genderType } from 'types/Card';
-import MateList from 'components/MateList';
+import { gradeType, genderType } from 'types/card';
+import { MateList } from 'components';
 
 interface Props {
   onClose?: () => void;

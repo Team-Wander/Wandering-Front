@@ -1,6 +1,6 @@
 import React from 'react';
 import * as S from './style';
-import { Card } from 'types/Card';
+import { Card } from 'types/Card/card';
 import TagList from './TagList';
 import MateList from '../../MateList';
 
