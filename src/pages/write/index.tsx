@@ -6,6 +6,7 @@ import ChevronRight from 'svg/ChevronRight';
 import ChoiceList from 'components/Filter/ChoiceList';
 import Textarea from 'components/textarea';
 import CheckboxList from 'components/CheckboxList';
+import AddressSearch from 'components/AdressSearch';
 
 interface FormValues {
   title: string;
@@ -17,9 +18,8 @@ interface FormValues {
   gender: string[];
   contact: string[];
 }
-
 const Write = () => {
-  const { register, handleSubmit, setValue } = useForm<FormValues>();
+  const { register, handleSubmit, setValue, watch } = useForm<FormValues>();
   const [selectedTags, setSelectedTags] = useState<string[]>([]);
   const [selectedGrades, setSelectedGrades] = useState<string[]>([]);
   const [selectedGender, setSelectedGender] = useState<string[]>([]);
@@ -79,14 +79,10 @@ const Write = () => {
               required: true,
             })}
           />
-          <Input
-            title="약속장소"
-            icon={true}
-            required={true}
-            placeholder="약속 장소를 입력해 주세요"
-            {...register('promise', {
-              required: true,
-            })}
+          <AddressSearch
+            register={register}
+            setValue={setValue}
+            watch={watch}
           />
           <Textarea
             title="내용"
@@ -96,7 +92,7 @@ const Write = () => {
             })}
           />
           <div>
-            <div>태그 * </div>
+            <div>태그 *</div>
             <S.List>
               <ChoiceList
                 label={'태그'}
