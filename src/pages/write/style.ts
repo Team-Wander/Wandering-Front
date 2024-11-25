@@ -21,6 +21,7 @@ export const Button = styled.button`
   background-color: #36c05c;
   color: #ffffff;
   margin-top: 40px;
+  cursor: pointer;
 `;
 export const TopBar = styled.div`
   display: flex;

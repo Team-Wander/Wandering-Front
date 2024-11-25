@@ -2,6 +2,7 @@ import React from 'react';
 import { Route, Routes } from 'react-router-dom';
 import { Home, Write, InputPage, Temp, NoPage } from 'pages';
 import Post from 'pages/post';
+import EnterInformation from 'pages/EnterInformation';
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
       <Route path="/input" element={<InputPage />} />
       <Route path="/temp" element={<Temp />} />
       <Route path="/post/:id" element={<Post />} />
+      <Route path="/enterinformation" element={<EnterInformation />} />
     </Routes>
   );
 }
