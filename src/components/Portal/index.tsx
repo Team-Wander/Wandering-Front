@@ -10,10 +10,9 @@ import * as S from './style';
 
 interface Props {
   children: ReactElement;
-  onClose?: () => void;
 }
 
-const Portal = ({ children, onClose }: Props) => {
+const Portal = ({ children }: Props) => {
   const [mounted, setMounted] = useState<boolean>(false);
 
   const portal = document.getElementById('modal');
@@ -31,9 +30,7 @@ const Portal = ({ children, onClose }: Props) => {
 
   return mounted ? (
     ReactDOM.createPortal(
-      <S.Wrapper onClick={onClose}>
-        {cloneElement(children, { onClick })}
-      </S.Wrapper>,
+      <S.Wrapper>{cloneElement(children, { onClick })}</S.Wrapper>,
       portal,
     )
   ) : (

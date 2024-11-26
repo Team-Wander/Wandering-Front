@@ -8,6 +8,8 @@ export const Wrapper = styled.div`
   justify-content: center;
   align-items: center;
   gap: 28px;
+  background-color: ${({ theme }) => theme.color.white};
+  border-radius: 8px;
 `;
 
 export const Header = styled.div`
@@ -15,6 +17,7 @@ export const Header = styled.div`
   justify-content: space-between;
   align-items: flex-start;
   align-self: stretch;
+  background-color: ${({ theme }) => theme.color.white};
 `;
 
 export const CloseButton = styled.div``;
@@ -24,7 +27,11 @@ export const Title = styled.div`
   color: ${({ theme }) => theme.color.black};
 `;
 
-export const ChangeButton = styled.input`
+export const Hidden = styled.input`
+  display: none;
+`;
+
+export const ChangeButton = styled.div`
   position: absolute;
   top: 0;
   right: 0;
@@ -32,6 +39,9 @@ export const ChangeButton = styled.input`
   height: 40px;
   border-radius: 0px 8px;
   background: ${({ theme }) => theme.color.gray[400]};
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
 
 export const ImageBack = styled.div`
@@ -39,13 +49,15 @@ export const ImageBack = styled.div`
   width: 352px;
   height: 345px;
   border-radius: 8px;
-  background-color: ${({ theme }) => theme.color.gray[300]};
+  background: ${({ theme }) => theme.color.gray[300]};
 `;
 
 export const CheckButton = styled.div`
+  padding: 10px 16px;
   display: flex;
   justify-content: center;
   align-items: center;
+  align-self: stretch;
   gap: 10px;
   border-radius: 8px;
   background-color: ${({ theme }) => theme.color.main};

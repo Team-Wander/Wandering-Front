@@ -22,6 +22,7 @@ export const DetailModal = styled.div`
 export const Text = styled.div`
   ${({ theme }) => theme.fontStyle.m3.reg}
   color: ${({ theme }) => theme.color.black};
+  cursor: pointer;
 `;
 
 export const WarningText = styled(Text)`

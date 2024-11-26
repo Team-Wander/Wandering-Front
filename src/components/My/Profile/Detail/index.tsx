@@ -16,13 +16,19 @@ const Detail = () => {
         </S.Button>
         {modal && (
           <S.DetailModal>
-            <S.Text onChange={() => setChange(true)}>프로필 변경</S.Text>
+            <S.Text
+              onClick={() => {
+                setChange(true);
+                console.log(change);
+              }}>
+              프로필 변경
+            </S.Text>
             <S.WarningText>로그아웃</S.WarningText>
           </S.DetailModal>
         )}
       </S.Wrapper>
       {change && (
-        <Portal onClose={() => setChange(false)}>
+        <Portal>
           <ImageChange onClose={() => setChange(false)} />
         </Portal>
       )}
