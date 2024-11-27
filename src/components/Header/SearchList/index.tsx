@@ -4,9 +4,10 @@ import SearchItem from './SearchItem';
 
 interface Props {
   word: string;
+  focus: boolean;
 }
 
-const SearchList = ({ word }: Props) => {
+const SearchList = ({ word, focus }: Props) => {
   const temp = [
     {
       id: 1,
@@ -26,7 +27,7 @@ const SearchList = ({ word }: Props) => {
   ];
 
   return (
-    <S.Wrapper>
+    <S.Wrapper focus={focus}>
       <S.HeaderText>검색{word ? '결과' : '기록'}</S.HeaderText>
       <S.List>
         {temp

@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 
 export const Container = styled.div`
-  width: 27rem;
+  width: 30.5rem;
   padding: 1.25rem 1.5rem;
   border-radius: 0.5rem;
   border: 1px solid #f5f6f8;
@@ -9,6 +9,9 @@ export const Container = styled.div`
   flex-direction: column;
   gap: 1rem;
   background-color: white;
+  @media (max-width: 1100px) {
+    width: 100%;
+  }
 `;
 
 export const AuthorDataBox = styled.div`
@@ -18,7 +21,8 @@ export const AuthorDataBox = styled.div`
 `;
 
 export const Author = styled.div`
-  color: #8f9094;
+  ${({ theme }) => theme.fontStyle.m3.reg}
+  color: ${({ theme }) => theme.color.gray[600]};
 `;
 
 export const Contour = styled.div`
@@ -33,7 +37,8 @@ export const AuthorData = styled.div`
   align-items: center;
   gap: 0.25rem;
   span {
-    color: #b4b5b7;
+    ${({ theme }) => theme.fontStyle.m3.reg}
+    color: ${({ theme }) => theme.color.gray[400]};
   }
 `;
 
@@ -41,9 +46,10 @@ export const Dot = styled.div`
   width: 4px;
   height: 4px;
   border-radius: 2px;
-  background-color: #b4b5b7;
+  background-color: ${({ theme }) => theme.color.gray[400]};
 `;
 
 export const Title = styled.div`
-  color: #333;
+  ${({ theme }) => theme.fontStyle.m1.semi}
+  color: ${({ theme }) => theme.color.black};
 `;

@@ -8,7 +8,7 @@ import {
   AddressSearch,
   ChoiceList,
 } from 'components';
-import ChevronRight from 'svg/ChevronRight';
+import { ChevronRight } from 'svg';
 
 interface FormValues {
   title: string;
