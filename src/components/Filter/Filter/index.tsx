@@ -2,7 +2,7 @@
 //   genderType,
 //   gradeType,
 //   tagType,
-// } from 'types/Card';
+// } from 'types/card';
 import ChoiceList from '../ChoiceList';
 import * as S from './style';
 import React from 'react';
