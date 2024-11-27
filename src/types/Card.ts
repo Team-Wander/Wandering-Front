@@ -1,11 +1,5 @@
 export type genderType = 'MALE' | 'FEMALE' | 'ANY';
-export type tagType =
-  | 'WALK'
-  | 'WORRY'
-  | 'CHAT'
-  | 'EXERCISE'
-  | 'STUDY'
-  | 'GO_OUT';
+
 export type gradeType =
   | 'ONE'
   | 'TWO'
@@ -15,7 +9,15 @@ export type gradeType =
   | 'SIX'
   | 'ANY';
 
-export interface Card {
+export type tagType =
+  | 'WALK'
+  | 'WORRY'
+  | 'CHAT'
+  | 'EXERCISE'
+  | 'STUDY'
+  | 'GO_OUT';
+
+export default interface Card {
   id?: number;
   author: string;
   title: string;

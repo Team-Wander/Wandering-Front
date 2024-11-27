@@ -3,7 +3,7 @@
 //   gradeType,
 //   tagType,
 // } from 'types/Card';
-import ChoiceList from './ChoiceList';
+import ChoiceList from '../ChoiceList';
 import * as S from './style';
 import React from 'react';
 import XIcon from 'svg/XIcon';
