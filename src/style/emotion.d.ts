@@ -21,100 +21,100 @@ declare module '@emotion/react' {
     };
     fontStyle: {
       h1: {
-        semi:{
+        semi: {
           fontSize: string;
-          fontWeight: string,
+          fontWeight: string;
           lineHeight: string;
-        },
-        reg:{
+        };
+        reg: {
           fontSize: string;
-          fontWeight: string,
+          fontWeight: string;
           lineHeight: string;
-        }
+        };
       };
       h2: {
-        semi:{
+        semi: {
           fontSize: string;
-          fontWeight: string,
+          fontWeight: string;
           lineHeight: string;
-        },
-        reg:{
+        };
+        reg: {
           fontSize: string;
-          fontWeight: string,
+          fontWeight: string;
           lineHeight: string;
-        }
+        };
       };
       h3: {
-        semi:{
+        semi: {
           fontSize: string;
-          fontWeight: string,
+          fontWeight: string;
           lineHeight: string;
-        },
-        reg:{
+        };
+        reg: {
           fontSize: string;
-          fontWeight: string,
+          fontWeight: string;
           lineHeight: string;
-        }
+        };
       };
       h4: {
-        semi:{
+        semi: {
           fontSize: string;
-          fontWeight: string,
+          fontWeight: string;
           lineHeight: string;
-        },
-        reg:{
+        };
+        reg: {
           fontSize: string;
-          fontWeight: string,
+          fontWeight: string;
           lineHeight: string;
-        }
+        };
       };
       m1: {
-        semi:{
+        semi: {
           fontSize: string;
-          fontWeight: string,
+          fontWeight: string;
           lineHeight: string;
-        },
-        reg:{
+        };
+        reg: {
           fontSize: string;
-          fontWeight: string,
+          fontWeight: string;
           lineHeight: string;
-        }
+        };
       };
       m2: {
-        semi:{
+        semi: {
           fontSize: string;
-          fontWeight: string,
+          fontWeight: string;
           lineHeight: string;
-        },
-        reg:{
+        };
+        reg: {
           fontSize: string;
-          fontWeight: string,
+          fontWeight: string;
           lineHeight: string;
-        }
+        };
       };
       m3: {
-        semi:{
+        semi: {
           fontSize: string;
-          fontWeight: string,
+          fontWeight: string;
           lineHeight: string;
-        },
-        reg:{
+        };
+        reg: {
           fontSize: string;
-          fontWeight: string,
+          fontWeight: string;
           lineHeight: string;
-        }
+        };
       };
       label: {
-        semi:{
+        semi: {
           fontSize: string;
-          fontWeight: string,
+          fontWeight: string;
           lineHeight: string;
-        },
-        reg:{
+        };
+        reg: {
           fontSize: string;
-          fontWeight: string,
+          fontWeight: string;
           lineHeight: string;
-        }
+        };
       };
     };
   }

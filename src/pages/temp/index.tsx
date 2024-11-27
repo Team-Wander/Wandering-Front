@@ -1,4 +1,4 @@
-import MemberList from 'components/MemberList';
+import { MemberList } from 'components';
 import React from 'react';
 
 const temp = () => {
