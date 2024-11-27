@@ -1,6 +1,6 @@
 import React from 'react';
 import * as S from './style';
-import { tagType } from 'types/Card/card';
+import { tagType } from 'types/card';
 
 const TagItem = ({ tag }: { tag: tagType }) => {
   const text = {
