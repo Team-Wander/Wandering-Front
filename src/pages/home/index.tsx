@@ -1,10 +1,13 @@
 import React, { useState } from 'react';
 import { PostList, Filter, Location, Header, Banner } from 'components';
-import { FilterIcon } from 'svg';
+import { FilterIcon, SeeReport } from 'svg';
 import * as S from './style';
+import ReportList from 'components/Report/ReportList';
 
 const Home = () => {
   const [modal, setModal] = useState<boolean>(false);
+  const [isActive, setIsActive] = useState<boolean>(false);
+  const [admin] = useState<boolean>(true);
 
   return (
     <>
@@ -13,15 +16,22 @@ const Home = () => {
         <Banner />
         <S.Nav>
           <Location />
-          <S.FilterContainer>
-            <S.FilterButton onClick={() => setModal(true)}>
-              <FilterIcon />
-              필터
-            </S.FilterButton>
-            {modal && <Filter onClose={() => setModal(false)} />}
-          </S.FilterContainer>
+          <S.ButtonWrapper>
+            {admin && (
+              <span onClick={() => setIsActive((prev) => !prev)}>
+                <SeeReport isActive={isActive} />
+              </span>
+            )}
+            <S.FilterContainer>
+              <S.FilterButton onClick={() => setModal(true)}>
+                <FilterIcon />
+                필터
+              </S.FilterButton>
+              {modal && <Filter onClose={() => setModal(false)} />}
+            </S.FilterContainer>
+          </S.ButtonWrapper>
         </S.Nav>
-        <PostList />
+        {admin && isActive ? <ReportList /> : <PostList />}
       </S.Container>
     </>
   );

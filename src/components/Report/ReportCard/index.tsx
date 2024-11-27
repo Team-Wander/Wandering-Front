@@ -1,19 +1,18 @@
 import React from 'react';
 import * as S from './style';
-import Card from 'types/card';
+import reportPost from 'types/reportPost';
 import TagList from './TagList';
-import MateList from '../../MateList';
+import MateList from '../TypeList';
 
-const PostCard = ({
+const ReportCard = ({
   author,
   author_gender,
   author_grade,
   author_school,
-  gender,
-  grade,
-  tag,
   title,
-}: Card) => {
+  type,
+  tag,
+}: reportPost) => {
   const text: { [key: string]: string } = {
     ONE: '1학년',
     TWO: '2학년',
@@ -28,7 +27,7 @@ const PostCard = ({
 
   return (
     <S.Container>
-      <MateList gender={gender} grade={grade} />
+      <MateList type={type} />
       <S.AuthorDataBox>
         <S.Author>{author}</S.Author>
         <S.Contour />
@@ -46,4 +45,4 @@ const PostCard = ({
   );
 };
 
-export default PostCard;
+export default ReportCard;

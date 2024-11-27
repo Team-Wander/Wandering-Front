@@ -13,3 +13,4 @@ export { default as Profile } from './Profile';
 export { default as SearchIcon } from './SearchIcon';
 export { default as SelectButton } from './SelectButton';
 export { default as XIcon } from './XIcon';
+export { default as SeeReport } from './SeeReport';
