@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 
 export const Container = styled.div`
-  width: 27rem;
+  width: 30.5rem;
   padding: 1.25rem 1.5rem;
   border-radius: 0.5rem;
   border: 1px solid #f5f6f8;
@@ -9,6 +9,9 @@ export const Container = styled.div`
   flex-direction: column;
   gap: 1rem;
   background-color: white;
+  @media (max-width: 1100px) {
+    width: 100%;
+  }
 `;
 
 export const AuthorDataBox = styled.div`
