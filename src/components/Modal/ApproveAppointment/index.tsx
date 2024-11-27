@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import * as S from './style';
 import { Profile, MateList } from 'components';
-import { gradeType, genderType } from 'types/card';
+import { gradeType, genderType } from 'types/Card';
 
 interface Props {
   onClose?: () => void;
