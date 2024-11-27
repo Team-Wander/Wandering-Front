@@ -1,7 +1,7 @@
 import * as S from './style';
 import React from 'react';
 import PostCard from '../PostCard';
-import Card from 'types/card';
+import Card from 'types/Card';
 
 const PostList = () => {
   const data: Card[] = [

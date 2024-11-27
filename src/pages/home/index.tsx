@@ -1,8 +1,14 @@
 import React, { useState } from 'react';
-import { PostList, Filter, Location, Header, Banner } from 'components';
+import {
+  PostList,
+  Filter,
+  Location,
+  Header,
+  Banner,
+  ReportList,
+} from 'components';
 import { FilterIcon, SeeReport } from 'svg';
 import * as S from './style';
-import ReportList from 'components/Report/ReportList';
 
 const Home = () => {
   const [modal, setModal] = useState<boolean>(false);

@@ -18,36 +18,44 @@ const theme = {
   },
   fontStyle: {
     h1: {
-      fontSize: '36px',
-      lineHeight: '120%',
+      semi: {
+        fontSize: '36px',
+        fontWeight: '600',
+        lineHeight: '120%',
+      },
+      reg: {
+        fontSize: '36px',
+        fontWeight: '400',
+        lineHeight: '120%',
+      },
     },
     h2: {
-      fontSize: '32px',
-      lineHeight: '120%',
+      semi: { fontSize: '32px', fontWeight: '600', lineHeight: '120%' },
+      reg: { fontSize: '32px', fontWeight: '400', lineHeight: '120%' },
     },
     h3: {
-      fontSize: '28px',
-      lineHeight: '130%',
+      semi: { fontSize: '28px', fontWeight: '600', lineHeight: '130%' },
+      reg: { fontSize: '28px', fontWeight: '400', lineHeight: '130%' },
     },
     h4: {
-      fontSize: '24px',
-      lineHeight: '130%',
+      semi: { fontSize: '24px', fontWeight: '600', lineHeight: '130%' },
+      reg: { fontSize: '24px', fontWeight: '400', lineHeight: '130%' },
     },
     m1: {
-      fontSize: '20px',
-      lineHeight: '150%',
+      semi: { fontSize: '20px', fontWeight: '600', lineHeight: '150%' },
+      reg: { fontSize: '20px', fontWeight: '400', lineHeight: '150%' },
     },
     m2: {
-      fontSize: '18px',
-      lineHeight: '150%',
+      semi: { fontSize: '18px', fontWeight: '600', lineHeight: '150%' },
+      reg: { fontSize: '18px', fontWeight: '400', lineHeight: '150%' },
     },
     m3: {
-      fontSize: '16px',
-      lineHeight: '165%',
+      semi: { fontSize: '16px', fontWeight: '600', lineHeight: '165%' },
+      reg: { fontSize: '16px', fontWeight: '400', lineHeight: '165%' },
     },
     label: {
-      fontSize: '14px',
-      lineHeight: '150%',
+      semi: { fontSize: '14px', fontWeight: '600', lineHeight: '150%' },
+      reg: { fontSize: '14px', fontWeight: '400', lineHeight: '150%' },
     },
   },
 };

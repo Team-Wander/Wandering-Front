@@ -1,7 +1,12 @@
 import styled from '@emotion/styled';
 
+export const Positioner = styled.div`
+  display: flex;
+  justify-content: center;
+`;
+
 export const Container = styled.div`
-  padding: 1.63rem 21% 0;
+  width: 68.75rem;
   display: flex;
   flex-direction: column;
   gap: 2.88rem;
