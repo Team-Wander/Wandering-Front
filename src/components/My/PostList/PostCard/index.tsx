@@ -1,8 +1,8 @@
 import React from 'react';
 import * as S from './style';
-import { Card } from 'types/Card';
 import TagList from './TagList';
 import MateList from 'components/MateList';
+import Card from 'types/Card';
 
 const PostCard = ({
   author,
