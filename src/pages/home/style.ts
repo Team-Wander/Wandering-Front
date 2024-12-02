@@ -24,6 +24,11 @@ export const BodyWrapper = styled.div`
   gap: 1.25rem;
 `;
 
+export const ButtonWrapper = styled.div`
+  display: flex;
+  gap: 1.25rem;
+`;
+
 export const FilterButton = styled.button`
   padding: 0.5rem 0.75rem;
   background: var(--GRAY-100, #f5f6f8);

@@ -15,3 +15,4 @@ export { default as ReportIcon } from './ReportIcon';
 export { default as SearchIcon } from './SearchIcon';
 export { default as SelectButton } from './SelectButton';
 export { default as XIcon } from './XIcon';
+export { default as SeeReport } from './SeeReport';
