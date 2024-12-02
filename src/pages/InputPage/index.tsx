@@ -1,7 +1,7 @@
 import React from 'react';
 import { useForm, SubmitHandler } from 'react-hook-form';
 import * as S from './style';
-import Input from 'components/Input';
+import { Input } from 'components';
 
 interface FormValues {
   search: string;

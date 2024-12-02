@@ -7,9 +7,7 @@ export default interface InputType {
   placeholder: string;
   register?: UseFormRegisterReturn;
   value?: string;
-  onChange?: (
-    e: React.ChangeEvent<HTMLInputElement>,
-  ) => void;
+  onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
   onClick?: React.MouseEventHandler<HTMLInputElement>;
   onBlur?: React.FocusEventHandler<HTMLInputElement>;
   defaultValue?: string;
