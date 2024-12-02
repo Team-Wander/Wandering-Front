@@ -1,4 +1,4 @@
-import { genderType, gradeType, tagType } from './card';
+import { genderType, gradeType, tagType } from './Card';
 
 export type reportType =
   | 'PRIVATE'
