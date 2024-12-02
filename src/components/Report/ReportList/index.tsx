@@ -27,7 +27,6 @@ const ReportList = () => {
 
   const getData = async () => {
     try {
-      console.log(process.env.REACT_APP_API);
       const data: reportPost[] = await authInstance.get('/admin/dec_info');
       data.map((item) => setPosts((prev) => [item, ...prev]));
     } catch (e) {
